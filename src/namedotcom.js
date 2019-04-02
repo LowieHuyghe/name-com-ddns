@@ -19,7 +19,7 @@ async function getRecordId (username, token, domain, host, type) {
     throw new Error('Record did not contain an id');
   }
 
-  return record.id
+  return record.id;
 }
 
 /**
@@ -41,7 +41,7 @@ async function updateRecord (username, token, domain, host, type, recordId, answ
   });
   const result = await request(`https://api.name.com/v4/domains/${domain}/records/${recordId}`, { auth: `${username}:${token}`, method: 'PUT' }, data);
   if (result.answer !== answer) {
-    throw new Error('Could not update record')
+    throw new Error('Could not update record');
   }
 }
 

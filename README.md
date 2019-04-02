@@ -6,7 +6,7 @@ Dynamic DNS Script for Name.com
 ## Installation
 
 ```bash
-npm install -g git+https://git@github.com/LowieHuyghe/name-com-dynamic-dns.git
+npm install -g git+https://git@github.com/LowieHuyghe/name-com-dynamic-dns.git@1.0.0
 
 cat << EOF > PATH/TO/MY/CONFIG.js
 module.exports = {

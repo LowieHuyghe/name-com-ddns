@@ -10,10 +10,10 @@ async function request (url, options, requestData) {
   return new Promise((resolve, reject) => {
     const headers = {
       ...options.headers,
-    }
+    };
     if (requestData) {
-      headers['Content-Type'] = 'application/x-www-form-urlencoded'
-      headers['Content-Length'] = Buffer.byteLength(requestData)
+      headers['Content-Type'] = 'application/x-www-form-urlencoded';
+      headers['Content-Length'] = Buffer.byteLength(requestData);
     }
 
     const request = https.request(url, { ...options, headers }, (response) => {

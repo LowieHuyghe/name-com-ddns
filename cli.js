@@ -6,9 +6,9 @@ const { getRecordId, updateRecord } = require('./src/namedotcom');
 
 (async () => {
 
-  const configFile = process.env.CONFIG
+  const configFile = process.env.CONFIG;
   if (!configFile) {
-    throw new Error('Required environment variable CONFIG was not set')
+    throw new Error('Required environment variable CONFIG was not set');
   }
   const config = require(path.resolve(configFile));
 
@@ -24,7 +24,7 @@ const { getRecordId, updateRecord } = require('./src/namedotcom');
   } = config
 
   if (!domain || !host || !username || !token) {
-    throw new Error('Not all required config was set (domain, host, username, token)')
+    throw new Error('Not all required config was set (domain, host, username, token)');
   }
 
   // Update record

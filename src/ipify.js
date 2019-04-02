@@ -9,7 +9,7 @@ async function getMyIp () {
   if (!result.ip) {
     throw new Error('Could not fetch own ip');
   }
-  return result.ip
+  return result.ip;
 }
 
 module.exports = {
