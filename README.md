@@ -8,7 +8,7 @@ Dynamic DNS Script for Name.com
 ```bash
 npm install -g git+https://git@github.com/LowieHuyghe/name-com-dynamic-dns.git
 
-echo << EOF > PATH/TO/MY/CONFIG.js
+cat << EOF > PATH/TO/MY/CONFIG.js
 module.exports = {
   domain: 'example.com',
   host: 'www',
