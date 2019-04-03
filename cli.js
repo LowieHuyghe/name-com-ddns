@@ -1,16 +1,17 @@
 #!/usr/bin/env node
 const path = require('path')
+const fs = require('fs')
 const { getMyIp } = require('./src/ipify');
 const { getRecordId, updateRecord } = require('./src/namedotcom');
 
 
 (async () => {
 
-  const configFile = process.env.CONFIG;
-  if (!configFile) {
-    throw new Error('Required environment variable CONFIG was not set');
+  const configFile = process.env.CONFIG || path.resolve(__dirname, 'config.js');
+  if (!fs.existsSync(configFile)) {
+    throw new Error('No config found. Try the environment variable CONFIG or place config.js in the root of this project');
   }
-  const config = require(path.resolve(configFile));
+  const config = require(configFile);
 
   const {
     // Required
