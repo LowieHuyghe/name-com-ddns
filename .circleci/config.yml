@@ -11,7 +11,7 @@ jobs:
       - run:
           name: Build Docker image
           command: |
-            docker build --no-cache -t lowieh/ddns-name-com:latest
+            docker build --no-cache -t lowieh/ddns-name-com:latest .
       - deploy:
           name: Push Docker image
           command: |
