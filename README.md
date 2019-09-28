@@ -5,9 +5,8 @@ Dynamic DNS Script for Name.com
 
 ## Installation
 
+Setup the config-file:
 ```bash
-npm install -g git+https://git@github.com/LowieHuyghe/name-com-dynamic-dns.git@1.0.0
-
 cat << EOF > PATH/TO/MY/CONFIG.js
 module.exports = {
   domain: 'example.com',
@@ -21,9 +20,26 @@ module.exports = {
 EOF
 ```
 
-
 ## Usage
 
+### With Docker
+
+The config-file should be located in the data-directory.
+```yaml
+version: "3"
+services:
+  ddns-name-com:
+    image: lowieh/ddns-name-com:latest
+    volumes:
+    - ./data:/data
+    environment:
+      - TOKEN=mytoken1234567890
+```
+
+### With CMD
+
 ```bash
-CONFIG=config.js TOKEN=mytoken1234567890 name-com-dynamic-dns
+npm install -g git+https://git@github.com/LowieHuyghe/ddns-name-com.git@1.0.0
+
+CONFIG=config.js TOKEN=mytoken1234567890 ddns-name-com
 ```

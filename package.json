@@ -1,5 +1,5 @@
 {
-  "name": "name-com-dynamic-dns",
+  "name": "ddns-name-com",
   "version": "1.0.0",
   "description": "Dynamic DNS Script for Name.com",
   "main": "index.js",
@@ -7,11 +7,11 @@
     "start": "./cli.js"
   },
   "bin": {
-    "name-com-dynamic-dns": "./cli.js"
+    "ddns-name-com": "./cli.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LowieHuyghe/name-com-dynamic-dns.git"
+    "url": "git+https://github.com/LowieHuyghe/ddns-name-com.git"
   },
   "keywords": [
     "name.com",
@@ -21,7 +21,7 @@
   "author": "Lowie Huyghe",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/LowieHuyghe/name-com-dynamic-dns/issues"
+    "url": "https://github.com/LowieHuyghe/ddns-name-com/issues"
   },
-  "homepage": "https://github.com/LowieHuyghe/name-com-dynamic-dns#readme"
+  "homepage": "https://github.com/LowieHuyghe/ddns-name-com#readme"
 }
