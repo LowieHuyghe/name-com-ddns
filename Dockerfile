@@ -7,7 +7,7 @@ COPY . .
 RUN npm ci --only=production
 
 # Setup cron
-RUN echo '*  *  *  *  *    cd /opt/ddns-name-com && npm start' > /var/spool/cron/crontabs/root
+RUN echo '*/15  *  *  *  *    cd /opt/ddns-name-com && npm start' > /var/spool/cron/crontabs/root
 
 # Data
 ENV CONFIG /data/config.js
