@@ -7,7 +7,7 @@ COPY . .
 RUN npm ci --only=production
 
 # Setup cron
-RUN echo '*/15  *  *  *  *    cd /opt/ddns-name-com && npm start' > /var/spool/cron/crontabs/root
+RUN echo '*/15  *  *  *  *    cd /opt/ddns-name-com && npm start > /dev/null' > /var/spool/cron/crontabs/root
 
 # Data
 ENV CONFIG /data/config.js
@@ -15,4 +15,4 @@ ENV TOKEN mytoken1234567890
 VOLUME ["/data"]
 
 # Run the command on container startup
-CMD crond -l 2 -f
+CMD crond -f -l 9
