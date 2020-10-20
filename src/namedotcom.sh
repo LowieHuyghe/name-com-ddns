@@ -12,6 +12,12 @@ nameDotComRequest () {
   local data="$5"
   if [ -z "$data" ]; then >&2 echo "data is not set"; return 1; fi
 
+  if ! which curl > /dev/null; then
+    >&2 echo "nameDotComRequest for '$domainName' failed"
+    >&2 echo "  curl needs to be installed"
+    return 1
+  fi
+
   local result="$( curl -sSf -u "$username:$token" "$url" -X "$method" -H 'Content-Type: application/json' --data "$data" )"
   if [[ $? != 0 ]] || [ -z "$result" ]; then
     >&2 echo "request to '$url' failed"
@@ -68,7 +74,7 @@ getRecordId () {
 
   if ! which jq > /dev/null; then
     >&2 echo "getRecordId for '$domainName' failed"
-    >&2 echo " jq needs to be installed"
+    >&2 echo "  jq needs to be installed"
     return 1
   fi
 

@@ -8,8 +8,10 @@ COPY ./run.sh ./
 RUN ls /opt/name-com-ddns/src
 RUN ls /opt/name-com-ddns/run.sh
 
-# Install jq
-RUN apk add --no-cache jq
+# Install dependencies
+RUN apk add --no-cache \
+  curl \
+  jq
 
 # Setup cron
 RUN echo '*/15  *  *  *  *    cd /opt/name-com-ddns && ./run.sh > /dev/null' > /var/spool/cron/crontabs/root
