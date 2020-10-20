@@ -7,8 +7,9 @@ on:
 
 jobs:
   build:
-    runs-on: docker:17.09.0-ce-git
+    runs-on: ubuntu-latest
     steps:
+    - uses: docker://docker:17.09.0-ce-git
     - uses: actions/checkout@v1
     - run: docker build --no-cache -t lowieh/ddns-name-com:latest .
     - run: MESSAGE="$GITHUB_REF" npm run deploy:prod -- --token "$TOKEN"
