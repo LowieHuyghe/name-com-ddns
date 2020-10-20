@@ -12,8 +12,6 @@ version: "3"
 services:
   name-com-ddns:
     image: lowieh/name-com-ddns:latest
-    volumes:
-    - ./data:/data
     environment:
       - USERNAME=myusername
       - TOKEN=mytoken1234567890
