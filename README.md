@@ -10,8 +10,8 @@ Dynamic DNS Script for Name.com
 ```yaml
 version: "3"
 services:
-  ddns-name-com:
-    image: lowieh/ddns-name-com:latest
+  name-com-ddns:
+    image: lowieh/name-com-ddns:latest
     volumes:
     - ./data:/data
     environment:

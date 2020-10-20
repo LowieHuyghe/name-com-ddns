@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: docker://docker:17.09.0-ce-git
     - uses: actions/checkout@v1
-    - run: docker build --no-cache -t lowieh/ddns-name-com:latest .
+    - run: docker build --no-cache -t lowieh/name-com-ddns:latest .
     - run: MESSAGE="$GITHUB_REF" npm run deploy:prod -- --token "$TOKEN"
       env:
         TOKEN: ${{secrets.firebase_token}}
