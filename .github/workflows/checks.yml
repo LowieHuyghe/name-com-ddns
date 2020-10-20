@@ -1,0 +1,16 @@
+name: Checks
+
+on:
+  push:
+    branches-ignore:
+      - master
+
+jobs:
+  build:
+    runs-on: docker:17.09.0-ce-git
+    steps:
+    - uses: actions/checkout@v1
+    - run: docker build --no-cache -t lowieh/ddns-name-com:latest .
+    - run: MESSAGE="$GITHUB_REF" npm run deploy:prod -- --token "$TOKEN"
+      env:
+        TOKEN: ${{secrets.firebase_token}}
